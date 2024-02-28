@@ -1,0 +1,63 @@
+package co.develhope.springrepo2.entities;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table
+public class ProgrammingLanguage {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    @Column(nullable = false)
+    private String name;
+
+    @Column(nullable = true)
+    private Integer firstAppearance;
+
+    @Column(nullable = false)
+    private String inventor;
+
+    public ProgrammingLanguage() {
+    }
+
+    public ProgrammingLanguage(long id, String name, Integer firstAppearance, String inventor) {
+        this.id = id;
+        this.name = name;
+        this.firstAppearance = firstAppearance;
+        this.inventor = inventor;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getFirstAppearance() {
+        return firstAppearance;
+    }
+
+    public void setFirstAppearance(Integer firstAppearance) {
+        this.firstAppearance = firstAppearance;
+    }
+
+    public String getInventor() {
+        return inventor;
+    }
+
+    public void setInventor(String inventor) {
+        this.inventor = inventor;
+    }
+}
